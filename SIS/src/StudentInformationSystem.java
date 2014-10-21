@@ -42,7 +42,7 @@ public class StudentInformationSystem
 		}
 	public void display()
 		{
-		
+		System.out.println();
 		}
 	
 	
