@@ -37,13 +37,13 @@ public class Course
 		{
 		this.letterGrade = letterGrade;
 		}
-	public void changeGrade(int studentNum, int courseNum, String newGrade)
+	public static void changeGrade(int studentNum, int courseNum, String newGrade)
 		{
 		System.out.println("What do you want to change the student's grade to?");
 		Scanner userInput = new Scanner(System.in); 
 		changeGrade = userInput.nextLine();
 		}
-	public void changeClass(int studentNum, int periodNum1, int periodNum2)
+	public static void changeClass(int studentNum, int periodNum1, int periodNum2)
 		{
 		System.out.println("What do you want to change the student's class to?");
 		Scanner userInput1 = new Scanner(System.in); 

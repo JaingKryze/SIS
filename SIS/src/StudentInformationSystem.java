@@ -103,17 +103,51 @@ public class StudentInformationSystem
 						}
 					else if(input.equals("1"))
 						{
-						
+						System.out.println("Enter the student's number the class period and the new grade");
+						input = keypad.nextLine();
+						String [] inputArray = input.split(" ");
+						Course.changeGrade(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), inputArray[2]);
+						run();
+						return;
 						}
 					else if(input.equals("2"))
 						{
 						
+						}
+					else
+						{
+						System.out.println("Stop trying to break the program it wont work");
+						run();
+						return;
 						}
 					break;
 					}
 				case "3":
 					{
 					input=keypad.nextLine();
+					if(input.equals("0"))
+						{
+						run();
+						return;
+						}
+					else if(input.equals("1"))
+						{
+						
+						}
+					else if(input.equals("2"))
+						{
+						
+						}
+					else if(input.equals("3"))
+						{
+						
+						}
+					else
+						{
+						System.out.println("Stop trying to break the program it wont work");
+						run();
+						return;
+						}
 					break;
 					}
 				default:
