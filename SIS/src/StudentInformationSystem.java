@@ -1,12 +1,15 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class StudentInformationSystem
 	{
+	static int periodToSort;
 	private static String menuNumber = "0";
 	private static Scanner keypad = new Scanner (System.in);
-	private static ArrayList<Student> studentList = new ArrayList<Student>();
+	//find way around this
+	public static ArrayList<Student> studentList = new ArrayList<Student>();
 	public static void main(String[] args) throws IOException
 		{
 		initStudents();
@@ -112,7 +115,12 @@ public class StudentInformationSystem
 						}
 					else if(input.equals("2"))
 						{
-						
+						System.out.println("Enter the student's number the first class period number and the second class period number");
+						input = keypad.nextLine();
+						String [] inputArray = input.split(" ");
+						Course.changeClass(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+						run();
+						return;
 						}
 					else
 						{
@@ -132,15 +140,22 @@ public class StudentInformationSystem
 						}
 					else if(input.equals("1"))
 						{
-						
+						Collections.sort(studentList , new NameSorter());
+						run();
+						return;
 						}
 					else if(input.equals("2"))
 						{
-						
+						Collections.sort(studentList , new GPASorter());
+						run();
+						return;
 						}
 					else if(input.equals("3"))
 						{
+						System.out.println("Input the class period you wish to sort by.");
+						periodToSort = keypad.nextInt();
 						
+//NEED TO FIGURE OUT WHAT TO DO HERE				
 						}
 					else
 						{
@@ -214,7 +229,7 @@ public class StudentInformationSystem
 				System.out.println("0) return to main menu");
 				System.out.println("1) sort by last name");
 				System.out.println("2) sort by grade");
-				System.out.println("3) sort by class");
+				System.out.println("3) sort by class name");
 				menuNumber = "3";
 				break;
 				}
