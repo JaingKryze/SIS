@@ -1,6 +1,4 @@
 //Seth Novosel
-//School test
-//home test
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Course
@@ -68,7 +66,7 @@ public class Course
 			{
 			 course1 = StudentInformationSystem.studentList.get(studentNum - 1).getCourse2();
 			}
-		else if(periodNum1 == 3)
+		else
 			{
 			 course1 = StudentInformationSystem.studentList.get(studentNum - 1).getCourse3();
 			}
@@ -81,7 +79,7 @@ public class Course
 			{
 			 course2 = StudentInformationSystem.studentList.get(studentNum - 1).getCourse2();
 			}
-		else if(periodNum2 == 3)
+		else
 			{
 			 course2 = StudentInformationSystem.studentList.get(studentNum - 1).getCourse3();
 			}
@@ -96,7 +94,7 @@ public class Course
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse2(course1);
 			}
-		else if(periodNum1 == 3)
+		else
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse3(course1);
 			}
@@ -109,7 +107,7 @@ public class Course
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse2(course2);
 			}
-		else if(periodNum2 == 3)
+		else
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse3(course2);
 			}

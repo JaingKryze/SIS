@@ -1,4 +1,5 @@
-import java.io.File;
+import java.io.*;
+import java.util.*;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class StudentInformationSystem
 		initStudents();
 		run();
 		}
-	public static ArrayList<Student> initStudents()
+	public static ArrayList<Student> initStudents() throws IOException
 		{
 		String firstName;
 		String lastName;
@@ -26,7 +27,7 @@ public class StudentInformationSystem
 		String course3Name;
 		String course3Grade;
 		Scanner file = new Scanner( new File( "studentlist.txt" ) );
-		while(file.hasNextLine())
+		while(file.hasNext())
 			{
 			firstName = file.next();
 			lastName = file.next();
@@ -36,7 +37,7 @@ public class StudentInformationSystem
 			course2Grade = file.next();
 			course3Name = file.next();
 			course3Grade = file.next();
-			Student.addStudent(firstName, lastName, course1Name, course1Grade, course2Grade, course3Name, course3Grade);
+			Student.addStudent(firstName, lastName, course1Name, course1Grade, course2Name, course2Grade, course3Name, course3Grade);
 			}
 		return studentList;
 		}
@@ -75,7 +76,7 @@ public class StudentInformationSystem
 						String course2Grade = keypad.nextLine();
 						String course3Name = keypad.nextLine();
 						String course3Grade = keypad.nextLine();
-						Student.addStudent(firstName, lastName, course1Name, course1Grade, course2Grade, course3Name, course3Grade);
+						Student.addStudent(firstName, lastName, course1Name, course1Grade, course2Name, course2Grade, course3Name, course3Grade);
 						displayStudentList();
 						run();
 						return;
@@ -94,7 +95,6 @@ public class StudentInformationSystem
 						run();
 						return;
 						}
-					break;
 					}
 				case "2":
 					{
@@ -128,7 +128,6 @@ public class StudentInformationSystem
 						run();
 						return;
 						}
-					break;
 					}
 				case "3":
 					{
@@ -154,7 +153,10 @@ public class StudentInformationSystem
 						{
 						System.out.println("Input the class period you wish to sort by.");
 						periodToSort = keypad.nextInt();
-//NEED TO FIGURE OUT WHAT TO DO HERE				
+						Collections.sort(studentList , new NameSorter());
+						Collections.sort(studentList, new CourseSorter());
+						run();
+						return;
 						}
 					else
 						{
@@ -162,7 +164,6 @@ public class StudentInformationSystem
 						run();
 						return;
 						}
-					break;
 					}
 				default:
 					{
@@ -178,10 +179,10 @@ public class StudentInformationSystem
 		for(Student x : studentList)
 			{
 			i++;
-			System.out.println(i + ") " + x.getFirstName() + " " + x.getLastName + " " + x.getGPA() + " " 
-			+ x.getCourse1().getPeriod() + " " + x.getCourse1().getCourseName() + " " + x.getCourse1().getLetterGrade()
-			+ x.getCourse2().getPeriod() + " " + x.getCourse2().getCourseName() + " " + x.getCourse2().getLetterGrade()
-			+ x.getCourse3().getPeriod() + " " + x.getCourse3().getCourseName() + " " + x.getCourse3().getLetterGrade());
+			System.out.println(i + ") " + x.getFirstName() + " " + x.getLastName() + " " + x.getGPA() + " " 
+			+ x.getCourse1().getPeriod() + " " + x.getCourse1().getClassName() + " " + x.getCourse1().getLetterGrade()
+			+ x.getCourse2().getPeriod() + " " + x.getCourse2().getClassName() + " " + x.getCourse2().getLetterGrade()
+			+ x.getCourse3().getPeriod() + " " + x.getCourse3().getClassName() + " " + x.getCourse3().getLetterGrade());
 			}
 		}
 	public static void displayMenu(String input)

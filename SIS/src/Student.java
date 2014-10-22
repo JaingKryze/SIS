@@ -31,15 +31,15 @@ public double getGPA()
 	{
 	return GPA;
 	}
-public Class getCourse1()
+public Course getCourse1()
 	{
 	return course1;
 	}
-public Class getCourse2()
+public Course getCourse2()
 	{
 	return course2;
 	}
-public Class getCourse3()
+public Course getCourse3()
 	{
 	return course3;
 	}
@@ -69,18 +69,206 @@ public void setCourse3(Course course3)
 	}
 public static void deleteStudent(int studentNum)
 	{
-	StudentInformationSystem.studentList.get(studentNum-1).remove();
+	StudentInformationSystem.studentList.remove(studentNum-1);
 	}
 
 public double calculateGPA(int studentNum)
 	{
+	double GPA;
+	double preGPA1 = 0;
+	double preGPA2 = 0; 
+	double preGPA3 = 0; 
 	String a = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(0,1);
+	String b = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(1,2);
+	String c = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(0,1);
+	String d = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(1,2);
+	String e = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(0,1);
+	String f = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(1,2);
 	if(a == "A")
 		{
-		preGPA1 = 
+		preGPA1 = 4.0;
+		if(b == "+")
+			{
+			preGPA1 = preGPA1 + .3;
+			}
+		if(b == "-")
+			{
+			preGPA1 = preGPA1 - .3;
+			}
 		}
+	if(a == "B")
+		{
+		preGPA1 = 3.0;
+		if(b == "+")
+			{
+			preGPA1 = preGPA1 + .3;
+			}
+		if(b == "-")
+			{
+			preGPA1 = preGPA1 - .3;
+			}
+		}
+	if(a == "C")
+		{
+		preGPA1 = 2.0;
+		if(b == "+")
+			{
+			preGPA1 = preGPA1 + .3;
+			}
+		if(b == "-")
+			{
+			preGPA1 = preGPA1 - .3;
+			}
+		}
+	if(a == "D")
+		{
+		preGPA1 = 1.0;
+		if(b == "+")
+			{
+			preGPA1 = preGPA1 + .3;
+			}
+		if(b == "-")
+			{
+			preGPA1 = preGPA1 - .3;
+			}
+		}
+	if(a == "F")
+		{
+		preGPA1 = 0.0;
+		if(b == "+")
+			{
+			preGPA1 = preGPA1 + .3;
+			}
+		if(b == "-")
+			{
+			preGPA1 = preGPA1 - .3;
+			}
+		}
+	if(c == "A")
+		{
+		preGPA2 = 4.0;
+		if(d == "+")
+			{
+			preGPA2 = preGPA2 + .3;
+			}
+		if(d == "-")
+			{
+			preGPA2 = preGPA2 - .3;
+			}
+		}
+	if(c == "B")
+		{
+		preGPA2 = 3.0;
+		if(d == "+")
+			{
+			preGPA2 = preGPA2 + .3;
+			}
+		if(d == "-")
+			{
+			preGPA2 = preGPA2 - .3;
+			}
+		}
+	if(c == "C")
+		{
+		preGPA2 = 2.0;
+		if(d == "+")
+			{
+			preGPA2 = preGPA2 + .3;
+			}
+		if(d == "-")
+			{
+			preGPA2 = preGPA2 - .3;
+			}
+		}
+	if(c == "D")
+		{
+		preGPA2 = 1.0;
+		if(d == "+")
+			{
+			preGPA2 = preGPA2 + .3;
+			}
+		if(d == "-")
+			{
+			preGPA2 = preGPA2 - .3;
+			}
+		}
+	if(c == "F")
+		{
+		preGPA2 = 0.0;
+		if(d == "+")
+			{
+			preGPA2 = preGPA2 + .3;
+			}
+		if(d == "-")
+			{
+			preGPA2 = preGPA2 - .3;
+			}
+		}
+	if(e == "A")
+		{
+		preGPA3 = 4.0;
+		if(f == "+")
+			{
+			preGPA3 = preGPA3 + .3;
+			}
+		if(f == "-")
+			{
+			preGPA3 = preGPA3 - .3;
+			}
+		}
+	if(e == "B")
+		{
+		preGPA3 = 3.0;
+		if(f == "+")
+			{
+			preGPA3 = preGPA3 + .3;
+			}
+		if(f == "-")
+			{
+			preGPA3 = preGPA3 - .3;
+			}
+		}
+	if(e == "C")
+		{
+		preGPA3 = 2.0;
+		if(f == "+")
+			{
+			preGPA3 = preGPA3 + .3;
+			}
+		if(f == "-")
+			{
+			preGPA3 = preGPA3 - .3;
+			}
+		}
+	if(e == "D")
+		{
+		preGPA3 = 1.0;
+		if(f == "+")
+			{
+			preGPA3 = preGPA3 + .3;
+			}
+		if(f == "-")
+			{
+			preGPA3 = preGPA3 - .3;
+			}
+		}
+	if(e == "F")
+		{
+		preGPA3 = 0.0;
+		if(f == "+")
+			{
+			preGPA3 = preGPA3 + .3;
+			}
+		if(f == "-")
+			{
+			preGPA3 = preGPA3 - .3;
+			}
+		}
+	GPA = (preGPA1 + preGPA2 + preGPA3)/3;
+	return GPA;
+	
 	//Possibility: use substring to take charAt(0) and if it is A, B, C, D, or F, just get to that GPA number, then use charAt(2) to add or subtract the difference, for example, plus .3 or whatever, for A+
-	GPA = (StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade() + StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade() + StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade())/3;
+	
 	}
 
 }

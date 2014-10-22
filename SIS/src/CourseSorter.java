@@ -1,3 +1,4 @@
+
 import java.util.Comparator;
 public class CourseSorter implements Comparator<Student>
 	{
@@ -5,15 +6,19 @@ public class CourseSorter implements Comparator<Student>
 		{
 		if (StudentInformationSystem.periodToSort == 1)
 			{
-			return s1.getCourse1().getClassName().compareTo(s2.getLastName());
+			return s1.getCourse1().getClassName().compareTo(s2.getCourse1().getClassName());
 			}
-		if (StudentInformationSystem.periodToSort == 2)
+		else if (StudentInformationSystem.periodToSort == 2)
 			{
-			return s1.get().compareTo(s2.getLastName());
+			return s1.getCourse2().getClassName().compareTo(s2.getCourse2().getClassName());
 			}
-		if (StudentInformationSystem.periodToSort == 3)
+		else if (StudentInformationSystem.periodToSort == 3)
 			{
-			return s1.get().compareTo(s2.getLastName());
+			return s1.getCourse3().getClassName().compareTo(s2.getCourse3().getClassName());
+			}
+		else 
+			{
+			return 0;
 			}
 		}
 	}
