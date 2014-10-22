@@ -154,7 +154,6 @@ public class StudentInformationSystem
 						{
 						System.out.println("Input the class period you wish to sort by.");
 						periodToSort = keypad.nextInt();
-						
 //NEED TO FIGURE OUT WHAT TO DO HERE				
 						}
 					else

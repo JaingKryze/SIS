@@ -3,10 +3,10 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private double GPA;
-	private Class course1;
-	private Class course2;
-	private Class course3;
-public Student(String f, String l, double g, Class a, Class b, Class c)
+	private Course course1;
+	private Course course2;
+	private Course course3;
+public Student(String f, String l, double g, Course a, Course b, Course c)
 	{
 	firstName = f;
 	lastName = l;
@@ -15,9 +15,9 @@ public Student(String f, String l, double g, Class a, Class b, Class c)
 	course2 = b;
 	course3 = c; 
 	}
-public static void addStudent(String firstName, String lastName, String course1Name, int course1Period, String course1LetterGrade, String course2Name, int course2Period, String course2Lettergrade, String course3Name, int course3Period, String course3LetterGrade)
+public static void addStudent(String firstName, String lastName, String course1Name, String course1LetterGrade, String course2Name, String course2LetterGrade, String course3Name, String course3LetterGrade)
 	{
-	StudentInformationSystem.studentList.add(new Student(firstName, lastName, (null), new Course(course1Name, course1Period course1Grade), new Course(course2Name, course2Period, course2grade), new Course(course3Name, course3Period, course3Grade))
+	StudentInformationSystem.studentList.add(new Student(firstName, lastName, (double)0, new Course(1, course1Name, course1LetterGrade), new Course(2, course2Name, course2LetterGrade), new Course(3, course3Name, course3LetterGrade)));
 	}
 public String getFirstName()
 	{
@@ -55,15 +55,15 @@ public void setGPA(double gPA)
 	{
 	GPA = gPA;
 	}
-public void setCourse1(Class course1)
+public void setCourse1(Course course1)
 	{
 	this.course1 = course1;
 	}
-public void setCourse2(Class course2)
+public void setCourse2(Course course2)
 	{
 	this.course2 = course2;
 	}
-public void setCourse3(Class course3)
+public void setCourse3(Course course3)
 	{
 	this.course3 = course3;
 	}
@@ -72,7 +72,7 @@ public static void deleteStudent(int studentNum)
 	StudentInformationSystem.studentList.get(studentNum-1).remove();
 	}
 
-public double calculateGPA()
+public double calculateGPA(int studentNum)
 	{
 	String a = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(0,1);
 	if(a == "A")

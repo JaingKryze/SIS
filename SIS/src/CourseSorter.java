@@ -5,7 +5,7 @@ public class CourseSorter implements Comparator<Student>
 		{
 		if (StudentInformationSystem.periodToSort == 1)
 			{
-			return s1.get().compareTo(s2.getLastName());
+			return s1.getCourse1().getClassName().compareTo(s2.getLastName());
 			}
 		if (StudentInformationSystem.periodToSort == 2)
 			{
