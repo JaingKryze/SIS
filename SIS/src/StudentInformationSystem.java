@@ -26,7 +26,7 @@ public class StudentInformationSystem
 		String course2Grade;
 		String course3Name;
 		String course3Grade;
-		Scanner file = new Scanner( new File( "studentlist.txt" ) );
+		Scanner file = new Scanner(new File("studentlist.txt"));
 		while(file.hasNext())
 			{
 			firstName = file.next();
@@ -146,6 +146,7 @@ public class StudentInformationSystem
 						}
 					else if(input.equals("2"))
 						{
+						Collections.sort(studentList , new NameSorter());
 						Collections.sort(studentList , new GPASorter());
 						run();
 						return;
@@ -180,10 +181,11 @@ public class StudentInformationSystem
 		for(Student x : studentList)
 			{
 			i++;
-			System.out.println(i + ") " + x.getFirstName() + " " + x.getLastName() + " " + x.getGPA() + " " 
-			+ x.getCourse1().getPeriod() + " " + x.getCourse1().getClassName() + " " + x.getCourse1().getLetterGrade()
-			+ x.getCourse2().getPeriod() + " " + x.getCourse2().getClassName() + " " + x.getCourse2().getLetterGrade()
-			+ x.getCourse3().getPeriod() + " " + x.getCourse3().getClassName() + " " + x.getCourse3().getLetterGrade());
+			System.out.print(i + ") " + x.getFirstName() + " " + x.getLastName() + " ");
+			System.out.printf("%.2f",x.getGPA());
+			System.out.println(" " + x.getCourse1().getPeriod() + " " + x.getCourse1().getClassName() + " " + x.getCourse1().getLetterGrade()
+			+ " " + x.getCourse2().getPeriod() + " " + x.getCourse2().getClassName() + " " + x.getCourse2().getLetterGrade()
+			+ " " + x.getCourse3().getPeriod() + " " + x.getCourse3().getClassName() + " " + x.getCourse3().getLetterGrade());
 			}
 		}
 	public static void displayMenu(String input)

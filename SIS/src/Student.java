@@ -86,17 +86,17 @@ public static double calculateGPA(int studentNum)
 	double preGPA2 = 0; 
 	double preGPA3 = 0; 
 	String a = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(0,1);
-	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().length()<1)
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().length()>1)
 		{
 		b = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(1,2);
 		}
 	String c = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(0,1);
-	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().length()<1)
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().length()>1)
 		{
 		d = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(1,2);
 		}
 	String e = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(0,1);
-	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().length()<1)
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().length()>1)
 		{
 		f = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(1,2);
 		}
@@ -111,11 +111,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(b.equals("+"))
 				{
-				preGPA1 = preGPA1 + .3;
+				preGPA1 = preGPA1 + 0.3;
 				}
 			if(b.equals("-"))
 				{
-				preGPA1 = preGPA1 - .3;
+				preGPA1 = preGPA1 - 0.3;
 				}
 			}
 		}
@@ -126,11 +126,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(b.equals("+"))
 				{
-				preGPA1 = preGPA1 + .3;
+				preGPA1 = preGPA1 + 0.3;
 				}
 			if(b.equals("-"))
 				{
-				preGPA1 = preGPA1 - .3;
+				preGPA1 = preGPA1 - 0.3;
 				}
 			}
 		}
@@ -141,11 +141,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(b.equals("+"))
 				{
-				preGPA1 = preGPA1 + .3;
+				preGPA1 = preGPA1 + 0.3;
 				}
 			if(b.equals("-"))
 				{
-				preGPA1 = preGPA1 - .3;
+				preGPA1 = preGPA1 - 0.3;
 				}
 			}
 		}
@@ -156,11 +156,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(b.equals("+"))
 				{
-				preGPA1 = preGPA1 + .3;
+				preGPA1 = preGPA1 + 0.3;
 				}
 			if(b.equals("-"))
 				{
-				preGPA1 = preGPA1 - .3;
+				preGPA1 = preGPA1 - 0.3;
 				}
 			}
 		}
@@ -171,11 +171,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(b.equals("+"))
 				{
-				preGPA1 = preGPA1 + .3;
+				preGPA1 = preGPA1 + 0.3;
 				}
 			if(b.equals("-"))
 				{
-				preGPA1 = preGPA1 - .3;
+				preGPA1 = preGPA1 - 0.3;
 				}
 			}
 		}
@@ -186,11 +186,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(d.equals("+"))
 				{
-				preGPA2 = preGPA2 + .3;
+				preGPA2 = preGPA2 + 0.3;
 				}
 			if(d.equals("-"))
 				{
-				preGPA2 = preGPA2 - .3;
+				preGPA2 = preGPA2 - 0.3;
 				}
 			}
 		}
@@ -201,11 +201,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(d.equals("+"))
 				{
-				preGPA2 = preGPA2 + .3;
+				preGPA2 = preGPA2 + 00.3;
 				}
 			if(d.equals("-"))
 				{
-				preGPA2 = preGPA2 - .3;
+				preGPA2 = preGPA2 - 0.3;
 				}
 			}
 		}
@@ -216,11 +216,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(d.equals("+"))
 				{
-				preGPA2 = preGPA2 + .3;
+				preGPA2 = preGPA2 + 0.3;
 				}
 			if(d.equals("-"))
 				{
-				preGPA2 = preGPA2 - .3;
+				preGPA2 = preGPA2 - 0.3;
 				}
 			}
 		}
@@ -231,11 +231,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(d.equals("+"))
 				{
-				preGPA2 = preGPA2 + .3;
+				preGPA2 = preGPA2 + 0.3;
 				}
 			if(d.equals("-"))
 				{
-				preGPA2 = preGPA2 - .3;
+				preGPA2 = preGPA2 - 0.3;
 				}
 			}
 		}
@@ -246,11 +246,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(d.equals("+"))
 				{
-				preGPA2 = preGPA2 + .3;
+				preGPA2 = preGPA2 + 0.3;
 				}
 			if(d.equals("-"))
 				{
-				preGPA2 = preGPA2 - .3;
+				preGPA2 = preGPA2 - 0.3;
 				}
 			}
 		}
@@ -261,11 +261,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(f.equals("+"))
 				{
-				preGPA3 = preGPA3 + .3;
+				preGPA3 = preGPA3 + 0.3;
 				}
 			if(f.equals("-"))
 				{
-				preGPA3 = preGPA3 - .3;
+				preGPA3 = preGPA3 - 0.3;
 				}
 			}
 		}
@@ -276,11 +276,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(f.equals("+"))
 				{
-				preGPA3 = preGPA3 + .3;
+				preGPA3 = preGPA3 + 0.3;
 				}
 			if(f.equals("-"))
 				{
-				preGPA3 = preGPA3 - .3;
+				preGPA3 = preGPA3 - 0.3;
 				}
 			}
 		}
@@ -291,11 +291,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(f.equals("+"))
 				{
-				preGPA3 = preGPA3 + .3;
+				preGPA3 = preGPA3 + 0.3;
 				}
 			if(f.equals("-"))
 				{
-				preGPA3 = preGPA3 - .3;
+				preGPA3 = preGPA3 - 0.3;
 				}
 			}
 		}
@@ -306,11 +306,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(f.equals("+"))
 				{
-				preGPA3 = preGPA3 + .3;
+				preGPA3 = preGPA3 + 0.3;
 				}
 			if(f.equals("-"))
 				{
-				preGPA3 = preGPA3 - .3;
+				preGPA3 = preGPA3 - 0.3;
 				}
 			}
 		}
@@ -321,11 +321,11 @@ public static double calculateGPA(int studentNum)
 			{
 			if(f.equals("+"))
 				{
-				preGPA3 = preGPA3 + .3;
+				preGPA3 = preGPA3 + 0.3;
 				}
 			if(f.equals("-"))
 				{
-				preGPA3 = preGPA3 - .3;
+				preGPA3 = preGPA3 - 0.3;
 				}
 			}
 		}
