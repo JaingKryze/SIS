@@ -19,7 +19,7 @@ public Student(String f, String l, double g, Course a, Course b, Course c)
 public static void addStudent(String firstName, String lastName, String course1Name, String course1LetterGrade, String course2Name, String course2LetterGrade, String course3Name, String course3LetterGrade)
 	{
 	StudentInformationSystem.studentList.add(new Student(firstName, lastName, (double)0, new Course(1, course1Name, course1LetterGrade), new Course(2, course2Name, course2LetterGrade), new Course(3, course3Name, course3LetterGrade)));
-	StudentInformationSystem.studentList.get(counter).setGPA(counter);
+	StudentInformationSystem.studentList.get(counter).setGPA(calculateGPA(counter+1));
 	counter++;
 	}
 public String getFirstName()
@@ -75,248 +75,263 @@ public static void deleteStudent(int studentNum)
 	StudentInformationSystem.studentList.remove(studentNum-1);
 	}
 
-public double calculateGPA(int studentNum)
+public static double calculateGPA(int studentNum)
 	{
-	double GPA;
+	String b = "";
+	String d = "";
+	String f = "";
+	
+	double GPA = 0;
 	double preGPA1 = 0;
 	double preGPA2 = 0; 
 	double preGPA3 = 0; 
 	String a = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(0,1);
-	String b = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(1,2);
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().length()<1)
+		{
+		b = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade().substring(1,2);
+		}
 	String c = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(0,1);
-	String d = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(1,2);
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().length()<1)
+		{
+		d = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(1,2);
+		}
 	String e = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(0,1);
-	String f = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(1,2);
+	if(StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().length()<1)
+		{
+		f = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(1,2);
+		}
 	String g = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade();
 	String h = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade();
 	String i = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade();
 	
-	if(a == "A")
+	if(a.equals("A"))
 		{
 		preGPA1 = 4.0;
 		if(g.length() > 1)
 			{
-			if(b == "+")
+			if(b.equals("+"))
 				{
 				preGPA1 = preGPA1 + .3;
 				}
-			if(b == "-")
+			if(b.equals("-"))
 				{
 				preGPA1 = preGPA1 - .3;
 				}
 			}
 		}
-	if(a == "B")
+	if(a.equals("B"))
 		{
 		preGPA1 = 3.0;
 		if(g.length() > 1)
 			{
-			if(b == "+")
+			if(b.equals("+"))
 				{
 				preGPA1 = preGPA1 + .3;
 				}
-			if(b == "-")
+			if(b.equals("-"))
 				{
 				preGPA1 = preGPA1 - .3;
 				}
 			}
 		}
-	if(a == "C")
+	if(a.equals("C"))
 		{
 		preGPA1 = 2.0;
 		if(g.length() > 1)
 			{
-			if(b == "+")
+			if(b.equals("+"))
 				{
 				preGPA1 = preGPA1 + .3;
 				}
-			if(b == "-")
+			if(b.equals("-"))
 				{
 				preGPA1 = preGPA1 - .3;
 				}
 			}
 		}
-	if(a == "D")
+	if(a.equals("D"))
 		{
 		preGPA1 = 1.0;
 		if(g.length() > 1)
 			{
-			if(b == "+")
+			if(b.equals("+"))
 				{
 				preGPA1 = preGPA1 + .3;
 				}
-			if(b == "-")
+			if(b.equals("-"))
 				{
 				preGPA1 = preGPA1 - .3;
 				}
 			}
 		}
-	if(a == "F")
+	if(a.equals("F"))
 		{
 		preGPA1 = 0.0;
 		if(g.length() > 1)
 			{
-			if(b == "+")
+			if(b.equals("+"))
 				{
 				preGPA1 = preGPA1 + .3;
 				}
-			if(b == "-")
+			if(b.equals("-"))
 				{
 				preGPA1 = preGPA1 - .3;
 				}
 			}
 		}
-	if(c == "A")
+	if(c.equals("A"))
 		{
 		preGPA2 = 4.0;
 		if(h.length()>1)
 			{
-			if(d == "+")
+			if(d.equals("+"))
 				{
 				preGPA2 = preGPA2 + .3;
 				}
-			if(d == "-")
+			if(d.equals("-"))
 				{
 				preGPA2 = preGPA2 - .3;
 				}
 			}
 		}
-	if(c == "B")
+	if(c.equals("B"))
 		{
 		preGPA2 = 3.0;
 		if(h.length()>1)
 			{
-			if(d == "+")
+			if(d.equals("+"))
 				{
 				preGPA2 = preGPA2 + .3;
 				}
-			if(d == "-")
+			if(d.equals("-"))
 				{
 				preGPA2 = preGPA2 - .3;
 				}
 			}
 		}
-	if(c == "C")
+	if(c.equals("C"))
 		{
 		preGPA2 = 2.0;
 		if(h.length()>1)
 			{
-			if(d == "+")
+			if(d.equals("+"))
 				{
 				preGPA2 = preGPA2 + .3;
 				}
-			if(d == "-")
+			if(d.equals("-"))
 				{
 				preGPA2 = preGPA2 - .3;
 				}
 			}
 		}
-	if(c == "D")
+	if(c.equals("D"))
 		{
 		preGPA2 = 1.0;
 		if(h.length()>1)
 			{
-			if(d == "+")
+			if(d.equals("+"))
 				{
 				preGPA2 = preGPA2 + .3;
 				}
-			if(d == "-")
+			if(d.equals("-"))
 				{
 				preGPA2 = preGPA2 - .3;
 				}
 			}
 		}
-	if(c == "F")
+	if(c.equals("F"))
 		{
 		preGPA2 = 0.0;
 		if(h.length()>1)
 			{
-			if(d == "+")
+			if(d.equals("+"))
 				{
 				preGPA2 = preGPA2 + .3;
 				}
-			if(d == "-")
+			if(d.equals("-"))
 				{
 				preGPA2 = preGPA2 - .3;
 				}
 			}
 		}
-	if(e == "A")
+	if(e.equals("A"))
 		{
 		preGPA3 = 4.0;
 		if(i.length()>1)
 			{
-			if(f == "+")
+			if(f.equals("+"))
 				{
 				preGPA3 = preGPA3 + .3;
 				}
-			if(f == "-")
+			if(f.equals("-"))
 				{
 				preGPA3 = preGPA3 - .3;
 				}
 			}
 		}
-	if(e == "B")
+	if(e.equals("B"))
 		{
 		preGPA3 = 3.0;
 		if(i.length()>1)
 			{
-			if(f == "+")
+			if(f.equals("+"))
 				{
 				preGPA3 = preGPA3 + .3;
 				}
-			if(f == "-")
+			if(f.equals("-"))
 				{
 				preGPA3 = preGPA3 - .3;
 				}
 			}
 		}
-	if(e == "C")
+	if(e.equals("C"))
 		{
 		preGPA3 = 2.0;
 		if(i.length()>1)
 			{
-			if(f == "+")
+			if(f.equals("+"))
 				{
 				preGPA3 = preGPA3 + .3;
 				}
-			if(f == "-")
+			if(f.equals("-"))
 				{
 				preGPA3 = preGPA3 - .3;
 				}
 			}
 		}
-	if(e == "D")
+	if(e.equals("D"))
 		{
 		preGPA3 = 1.0;
 		if(i.length()>1)
 			{
-			if(f == "+")
+			if(f.equals("+"))
 				{
 				preGPA3 = preGPA3 + .3;
 				}
-			if(f == "-")
+			if(f.equals("-"))
 				{
 				preGPA3 = preGPA3 - .3;
 				}
 			}
 		}
-	if(e == "F")
+	if(e.equals("F"))
 		{
 		preGPA3 = 0.0;
 		if(i.length()>1)
 			{
-			if(f == "+")
+			if(f.equals("+"))
 				{
 				preGPA3 = preGPA3 + .3;
 				}
-			if(f == "-")
+			if(f.equals("-"))
 				{
 				preGPA3 = preGPA3 - .3;
 				}
 			}
 		}
-	GPA = (preGPA1 + preGPA2 + preGPA3)/3;
+	double intGPA = (preGPA1 + preGPA2 + preGPA3)/3 *100;
+	GPA = (int) intGPA;
+	GPA = GPA/100;
 	return GPA;
 	
 	//Possibility: use substring to take charAt(0) and if it is A, B, C, D, or F, just get to that GPA number, then use charAt(2) to add or subtract the difference, for example, plus .3 or whatever, for A+
