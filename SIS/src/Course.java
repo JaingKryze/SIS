@@ -88,28 +88,28 @@ public class Course
 		//fills course
 		if(periodNum1 == 1)
 			{
-			StudentInformationSystem.studentList.get(studentNum - 1).setCourse1(course1);
-			}
-		else if(periodNum1 == 2)
-			{
-			StudentInformationSystem.studentList.get(studentNum - 1).setCourse2(course1);
-			}
-		else
-			{
-			StudentInformationSystem.studentList.get(studentNum - 1).setCourse3(course1);
-			}
-		
-		if(periodNum2 == 1)
-			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse1(course2);
 			}
-		else if(periodNum2 == 2)
+		else if(periodNum1 == 2)
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse2(course2);
 			}
 		else
 			{
 			StudentInformationSystem.studentList.get(studentNum - 1).setCourse3(course2);
+			}
+		
+		if(periodNum2 == 1)
+			{
+			StudentInformationSystem.studentList.get(studentNum - 1).setCourse1(course1);
+			}
+		else if(periodNum2 == 2)
+			{
+			StudentInformationSystem.studentList.get(studentNum - 1).setCourse2(course1);
+			}
+		else
+			{
+			StudentInformationSystem.studentList.get(studentNum - 1).setCourse3(course1);
 			}
 		}
 	}

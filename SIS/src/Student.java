@@ -6,6 +6,7 @@ public class Student {
 	private Course course1;
 	private Course course2;
 	private Course course3;
+	static int counter = 0; 
 public Student(String f, String l, double g, Course a, Course b, Course c)
 	{
 	firstName = f;
@@ -18,6 +19,8 @@ public Student(String f, String l, double g, Course a, Course b, Course c)
 public static void addStudent(String firstName, String lastName, String course1Name, String course1LetterGrade, String course2Name, String course2LetterGrade, String course3Name, String course3LetterGrade)
 	{
 	StudentInformationSystem.studentList.add(new Student(firstName, lastName, (double)0, new Course(1, course1Name, course1LetterGrade), new Course(2, course2Name, course2LetterGrade), new Course(3, course3Name, course3LetterGrade)));
+	StudentInformationSystem.studentList.get(counter).setGPA(counter);
+	counter++;
 	}
 public String getFirstName()
 	{
@@ -84,184 +87,233 @@ public double calculateGPA(int studentNum)
 	String d = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade().substring(1,2);
 	String e = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(0,1);
 	String f = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade().substring(1,2);
+	String g = StudentInformationSystem.studentList.get(studentNum-1).getCourse1().getLetterGrade();
+	String h = StudentInformationSystem.studentList.get(studentNum-1).getCourse2().getLetterGrade();
+	String i = StudentInformationSystem.studentList.get(studentNum-1).getCourse3().getLetterGrade();
+	
 	if(a == "A")
 		{
 		preGPA1 = 4.0;
-		if(b == "+")
+		if(g.length() > 1)
 			{
-			preGPA1 = preGPA1 + .3;
-			}
-		if(b == "-")
-			{
-			preGPA1 = preGPA1 - .3;
+			if(b == "+")
+				{
+				preGPA1 = preGPA1 + .3;
+				}
+			if(b == "-")
+				{
+				preGPA1 = preGPA1 - .3;
+				}
 			}
 		}
 	if(a == "B")
 		{
 		preGPA1 = 3.0;
-		if(b == "+")
+		if(g.length() > 1)
 			{
-			preGPA1 = preGPA1 + .3;
-			}
-		if(b == "-")
-			{
-			preGPA1 = preGPA1 - .3;
+			if(b == "+")
+				{
+				preGPA1 = preGPA1 + .3;
+				}
+			if(b == "-")
+				{
+				preGPA1 = preGPA1 - .3;
+				}
 			}
 		}
 	if(a == "C")
 		{
 		preGPA1 = 2.0;
-		if(b == "+")
+		if(g.length() > 1)
 			{
-			preGPA1 = preGPA1 + .3;
-			}
-		if(b == "-")
-			{
-			preGPA1 = preGPA1 - .3;
+			if(b == "+")
+				{
+				preGPA1 = preGPA1 + .3;
+				}
+			if(b == "-")
+				{
+				preGPA1 = preGPA1 - .3;
+				}
 			}
 		}
 	if(a == "D")
 		{
 		preGPA1 = 1.0;
-		if(b == "+")
+		if(g.length() > 1)
 			{
-			preGPA1 = preGPA1 + .3;
-			}
-		if(b == "-")
-			{
-			preGPA1 = preGPA1 - .3;
+			if(b == "+")
+				{
+				preGPA1 = preGPA1 + .3;
+				}
+			if(b == "-")
+				{
+				preGPA1 = preGPA1 - .3;
+				}
 			}
 		}
 	if(a == "F")
 		{
 		preGPA1 = 0.0;
-		if(b == "+")
+		if(g.length() > 1)
 			{
-			preGPA1 = preGPA1 + .3;
-			}
-		if(b == "-")
-			{
-			preGPA1 = preGPA1 - .3;
+			if(b == "+")
+				{
+				preGPA1 = preGPA1 + .3;
+				}
+			if(b == "-")
+				{
+				preGPA1 = preGPA1 - .3;
+				}
 			}
 		}
 	if(c == "A")
 		{
 		preGPA2 = 4.0;
-		if(d == "+")
+		if(h.length()>1)
 			{
-			preGPA2 = preGPA2 + .3;
-			}
-		if(d == "-")
-			{
-			preGPA2 = preGPA2 - .3;
+			if(d == "+")
+				{
+				preGPA2 = preGPA2 + .3;
+				}
+			if(d == "-")
+				{
+				preGPA2 = preGPA2 - .3;
+				}
 			}
 		}
 	if(c == "B")
 		{
 		preGPA2 = 3.0;
-		if(d == "+")
+		if(h.length()>1)
 			{
-			preGPA2 = preGPA2 + .3;
-			}
-		if(d == "-")
-			{
-			preGPA2 = preGPA2 - .3;
+			if(d == "+")
+				{
+				preGPA2 = preGPA2 + .3;
+				}
+			if(d == "-")
+				{
+				preGPA2 = preGPA2 - .3;
+				}
 			}
 		}
 	if(c == "C")
 		{
 		preGPA2 = 2.0;
-		if(d == "+")
+		if(h.length()>1)
 			{
-			preGPA2 = preGPA2 + .3;
-			}
-		if(d == "-")
-			{
-			preGPA2 = preGPA2 - .3;
+			if(d == "+")
+				{
+				preGPA2 = preGPA2 + .3;
+				}
+			if(d == "-")
+				{
+				preGPA2 = preGPA2 - .3;
+				}
 			}
 		}
 	if(c == "D")
 		{
 		preGPA2 = 1.0;
-		if(d == "+")
+		if(h.length()>1)
 			{
-			preGPA2 = preGPA2 + .3;
-			}
-		if(d == "-")
-			{
-			preGPA2 = preGPA2 - .3;
+			if(d == "+")
+				{
+				preGPA2 = preGPA2 + .3;
+				}
+			if(d == "-")
+				{
+				preGPA2 = preGPA2 - .3;
+				}
 			}
 		}
 	if(c == "F")
 		{
 		preGPA2 = 0.0;
-		if(d == "+")
+		if(h.length()>1)
 			{
-			preGPA2 = preGPA2 + .3;
-			}
-		if(d == "-")
-			{
-			preGPA2 = preGPA2 - .3;
+			if(d == "+")
+				{
+				preGPA2 = preGPA2 + .3;
+				}
+			if(d == "-")
+				{
+				preGPA2 = preGPA2 - .3;
+				}
 			}
 		}
 	if(e == "A")
 		{
 		preGPA3 = 4.0;
-		if(f == "+")
+		if(i.length()>1)
 			{
-			preGPA3 = preGPA3 + .3;
-			}
-		if(f == "-")
-			{
-			preGPA3 = preGPA3 - .3;
+			if(f == "+")
+				{
+				preGPA3 = preGPA3 + .3;
+				}
+			if(f == "-")
+				{
+				preGPA3 = preGPA3 - .3;
+				}
 			}
 		}
 	if(e == "B")
 		{
 		preGPA3 = 3.0;
-		if(f == "+")
+		if(i.length()>1)
 			{
-			preGPA3 = preGPA3 + .3;
-			}
-		if(f == "-")
-			{
-			preGPA3 = preGPA3 - .3;
+			if(f == "+")
+				{
+				preGPA3 = preGPA3 + .3;
+				}
+			if(f == "-")
+				{
+				preGPA3 = preGPA3 - .3;
+				}
 			}
 		}
 	if(e == "C")
 		{
 		preGPA3 = 2.0;
-		if(f == "+")
+		if(i.length()>1)
 			{
-			preGPA3 = preGPA3 + .3;
-			}
-		if(f == "-")
-			{
-			preGPA3 = preGPA3 - .3;
+			if(f == "+")
+				{
+				preGPA3 = preGPA3 + .3;
+				}
+			if(f == "-")
+				{
+				preGPA3 = preGPA3 - .3;
+				}
 			}
 		}
 	if(e == "D")
 		{
 		preGPA3 = 1.0;
-		if(f == "+")
+		if(i.length()>1)
 			{
-			preGPA3 = preGPA3 + .3;
-			}
-		if(f == "-")
-			{
-			preGPA3 = preGPA3 - .3;
+			if(f == "+")
+				{
+				preGPA3 = preGPA3 + .3;
+				}
+			if(f == "-")
+				{
+				preGPA3 = preGPA3 - .3;
+				}
 			}
 		}
 	if(e == "F")
 		{
 		preGPA3 = 0.0;
-		if(f == "+")
+		if(i.length()>1)
 			{
-			preGPA3 = preGPA3 + .3;
-			}
-		if(f == "-")
-			{
-			preGPA3 = preGPA3 - .3;
+			if(f == "+")
+				{
+				preGPA3 = preGPA3 + .3;
+				}
+			if(f == "-")
+				{
+				preGPA3 = preGPA3 - .3;
+				}
 			}
 		}
 	GPA = (preGPA1 + preGPA2 + preGPA3)/3;

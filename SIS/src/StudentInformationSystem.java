@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class StudentInformationSystem
 	{
 	static int periodToSort;
-	private static String menuNumber = "0";
+	private static String menuNumber = "...";
 	private static Scanner keypad = new Scanner (System.in);
 	//find way around this
 	public static ArrayList<Student> studentList = new ArrayList<Student>();
@@ -43,6 +43,7 @@ public class StudentInformationSystem
 		}
 	public static void run()
 		{
+		menuNumber = "...";
 		String input;
 		while(true)
 			{
@@ -198,7 +199,7 @@ public class StudentInformationSystem
 				{
 				System.out.println("What would you like to do?");
 				System.out.println("0) exit program");
-				System.out.println("1) add or delete a student/n2) change student grades//schedule/n3) sort students");
+				System.out.println("1) add or delete a student\n2) change student grades/schedule\n3) sort students");
 				menuNumber = "0";
 				break;
 				}
